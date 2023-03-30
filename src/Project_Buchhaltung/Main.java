@@ -21,38 +21,39 @@ public class Main {
         Company company= new Company();
 
         List<Employee> allTogether = new ArrayList<>();
-        allTogether.add(new Worker(0,"Britney Spears",18,184));
-        allTogether.add(new Worker(1,"Christina Aguilera",19,184));
-        allTogether.add(new Worker(2,"Justin Timberlake", 20,184));
-        allTogether.add(new Worker(3,"Jessica Bill",17,184));
-        allTogether.add(new Worker(4,"Cameron Diaz",17,184));
-        allTogether.add(new Worker(5,"Nelly Furtado",16,184));
-        allTogether.add(new Worker(6,"Amanda Seyfried",19,184));
-        allTogether.add(new Worker(7,"Taylor Swift",18,184));
-        allTogether.add(new Worker(8,"Pharrell Williams",19,184));
-        allTogether.add(new Worker(9,"Anna Kendrick",18,184));
-        allTogether.add(new Manager(10,"Jennifer Lopez",16000,10,120));
-        allTogether.add(new Manager(11,"Shakira Shakirowna",20000,11,110));
-        allTogether.add(new Manager(12,"Beyonce Beyoncowna",50000,10,100));
-        allTogether.add(new Manager(13,"Adele Adelewna",19000,12,50));
-        allTogether.add(new Manager(14,"Miley Cyrus",40000,12,90));
+        allTogether.add(new Worker("Britney Spears",18,184));
+        allTogether.add(new Worker("Christina Aguilera",19,184));
+        allTogether.add(new Worker("Justin Timberlake", 20,184));
+        allTogether.add(new Worker("Jessica Bill",17,184));
+        allTogether.add(new Worker("Cameron Diaz",17,184));
+        allTogether.add(new Worker("Nelly Furtado",16,184));
+        allTogether.add(new Worker("Amanda Seyfried",19,184));
+        allTogether.add(new Worker("Taylor Swift",18,184));
+        allTogether.add(new Worker("Pharrell Williams",19,184));
+        allTogether.add(new Worker("Anna Kendrick",18,184));
+        allTogether.add(new Manager("Jennifer Lopez",16000,10,120));
+        allTogether.add(new Manager("Shakira Shakirowna",20000,11,110));
+        allTogether.add(new Manager("Beyonce Beyoncowna",50000,10,100));
+        allTogether.add(new Manager("Adele Adelewna",19000,12,50));
+        allTogether.add(new Manager("Miley Cyrus",40000,12,90));
 
         System.out.println(allTogether);
 
-        System.out.println(allTogether.get(10).salary());
+        System.out.println(allTogether.get(10).salary(allTogether.get(10)));
 
         System.out.println(company.sumSalaryOfAllEmployee(allTogether));
 
-        System.out.println(company.dismissal(allTogether,14));
+        System.out.println(Employee.dismissal(allTogether,14));
+        System.out.println(Employee.dismissal(allTogether,14));
 
-        Employee employee = new Manager(15,"Michael Jackson", 50000,12,130);
-
+        Employee employee = new Manager("Michael Jackson", 50000,12,130);
+        System.out.println(employee.salary(employee));
 
         System.out.println(company.recruit(employee,allTogether));
 
         System.out.println(allTogether);
-        Employee employee1= new Manager(15,"Edgar Arushanyan",56000, 12,150);
-
+        Employee employee1= new Manager("Edgar Arushanyan",56000, 12,150);
+        System.out.println(employee1);
         System.out.println(company.recruit(employee1,allTogether));
         System.out.println(allTogether);
 

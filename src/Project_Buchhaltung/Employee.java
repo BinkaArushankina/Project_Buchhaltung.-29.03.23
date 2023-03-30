@@ -1,18 +1,33 @@
 package Project_Buchhaltung;
 
 
+import java.util.List;
+
 public abstract class Employee {
     private int id;
     private String name;
-    private int salaryPerHour;
     private int workHoursPerMonth;
-    private int sale;
-    private int percentageOfTheSale;
     public final int MIN_SALARY = 1400;
+    static int count=0;
+
+    public Employee( String name, int workHoursPerMonth) {
+        this.id = count++;
+        this.name = name;
+        this.workHoursPerMonth = workHoursPerMonth;
+    }
+
+    abstract int salary(Employee employee);
 
 
-
-    abstract int salary();
+    static boolean dismissal(List<Employee> workers, int id){
+        for (int i=0; i< workers.size(); i++){
+            if(workers.get(i).getId()==id){
+                 workers.remove(workers.get(i));
+                 return true;
+            }
+        }
+      return false;
+    }
 
     public int getId() {
         return id;
@@ -20,21 +35,16 @@ public abstract class Employee {
     public String getName() {
         return name;
     }
-    public int getSalaryPerHour() {
-        return salaryPerHour;
-    }
+
     public int getWorkHoursPerMonth() {
         return workHoursPerMonth;
     }
-    public int getSale() {
-        return sale;
-    }
-    public int getPercentageOfTheSale() {
-        return percentageOfTheSale;
-    }
-    public int getMIN_SALARY() {
-        return MIN_SALARY;
-    }
 
 
+    public String toString() {
+        return
+                "id=" + id +
+                ", name=" + name +
+                ", workHoursPerMonth=" + workHoursPerMonth ;
+    }
 }

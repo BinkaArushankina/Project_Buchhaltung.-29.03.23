@@ -6,8 +6,8 @@ public class Company {
 
     public int sumSalaryOfAllEmployee(List<Employee> workers){
         int sum=0;
-        for(Employee empl : workers){
-            sum+=empl.salary();
+        for(int i=0; i< workers.size(); i++){
+            sum+=workers.get(i).salary(workers.get(i));
         }
         return sum;
     }
@@ -22,9 +22,7 @@ public class Company {
             return false;
         }
     }
-    boolean dismissal(List<Employee> workers, int id){
-        return workers.remove(workers.get(id));
-    }
+
 
 
 }

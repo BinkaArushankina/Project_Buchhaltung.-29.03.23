@@ -70,7 +70,7 @@ public class AccoutingTest {
         actual.add( new Manager("Jack",16000,10,120));
         actual.add( new Worker("Jack",18,184));
 
-        assertFalse(Employee.dismissal(actual,3));
+        assertFalse(Employee.dismissal(actual,2));
     }
 
     @Test
